@@ -1,6 +1,6 @@
-# From Zero to Production: A Practical Python Development Pipeline
+# Python Development Pipelines: Tools and Workflows for Professional Python
 
-This repository contains the source for the book "From Zero to Production: A Practical Python Development Pipeline" - a comprehensive guide to professional Python development practices.
+This repository contains the source for the book "Python Development Pipelines: Tools and Workflows for Professional Python" - a comprehensive guide to professional Python development practices.
 
 ## About the Book
 
@@ -32,8 +32,8 @@ This book is part of a comprehensive series for mastering modern software develo
 
 ### Python Track
 - **[Python Step by Step with AI](https://michaelborck-books.github.io/python-step-by-step-ai)**: Perfect for absolute beginners learning computational thinking
-- **[Python Jumpstart](https://michaelborck-books.github.io/python-jumpstart)**: Coding Fundamentals for the AI Era
-- **[From Zero to Production](https://michaelborck-books.github.io/python-dev-book)** (this book): A Practical Python Development Pipeline
+- **[Python Foundations](https://michaelborck-books.github.io/python-foundations)**: Coding Fundamentals for the AI Era
+- **[Python Development Pipelines](https://michaelborck-books.github.io/python-development-pipelines)** (this book): Tools and Workflows for Professional Python
 
 ### Web Track
 - **[Web Development Step by Step](https://michaelborck-books.github.io/web-dev-step-by-ste-ai)**: Building Business Solutions with AI
