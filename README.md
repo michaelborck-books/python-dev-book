@@ -28,15 +28,15 @@ The rendered book is available at: https://book-repositories.github.io/python-de
 This book is part of a comprehensive series for mastering modern software development in the AI era:
 
 ### Foundational Methodology
-- **[Conversation, Not Delegation](https://michaelborck-books.github.io/intentional-prompting)**: Mastering Human-AI Development
+- **[Conversation, Not Delegation](https://michaelborck-books.github.io/conversation-not-delegation)**: Mastering Human-AI Development
 
 ### Python Track
-- **[Think Python, Direct AI](https://michaelborck-books.github.io/python-step-by-step-ai)**: Computational Thinking for Beginners
-- **[Code Python, Consult AI](https://michaelborck-books.github.io/python-foundations)**: Python Fundamentals for the AI Era
-- **[Ship It: Python in Production](https://michaelborck-books.github.io/python-development-pipelines)** (this book): Professional Tools and Workflows
+- **[Think Python, Direct AI](https://michaelborck-books.github.io/think-python-direct-ai)**: Computational Thinking for Beginners
+- **[Code Python, Consult AI](https://michaelborck-books.github.io/code-python-consult-ai)**: Python Fundamentals for the AI Era
+- **[Ship It: Python in Production](https://michaelborck-books.github.io/ship-it-python-in-production)** (this book): Professional Tools and Workflows
 
 ### Web Track
-- **[Build Web, Guide AI](https://michaelborck-books.github.io/web-dev-step-by-step-ai)**: Business Web Development with AI
+- **[Build Web, Guide AI](https://michaelborck-books.github.io/build-web-guide-ai)**: Business Web Development with AI
 
 ## Related Resources
 
