@@ -2,6 +2,12 @@
 
 Moving beyond traditional Python package publishing, this chapter explores how to distribute complete applications to users across web, desktop, and mobile platforms—all from a single codebase. We'll focus on an architecture pattern that works exceptionally well with AI-assisted development: FastAPI backend + React frontend + multiple distribution targets.
 
+::: {.callout-note}
+## A Note on Technologies Beyond Python
+
+This chapter introduces React and Electron—technologies outside Python's ecosystem. Don't worry: the goal isn't to master these tools, but to understand the architecture that lets you ship to multiple platforms. Your Python skills remain central (the backend is still FastAPI), and the companion templates handle the frontend implementation details. With AI assistance, you can work effectively with React and Electron by understanding their role in the architecture rather than memorizing their APIs.
+:::
+
 ## The Modern Distribution Challenge
 
 Today's users expect applications everywhere:
