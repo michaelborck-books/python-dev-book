@@ -16,6 +16,7 @@ book:
     - chapters/05-advanced-techniques.qmd
     - chapters/06-project-management.qmd
     - chapters/08-distribution.qmd
+    - chapters/09-notebooks.qmd
     - chapters/07-conclusion.qmd
     - acknowledgments.qmd
   appendices:

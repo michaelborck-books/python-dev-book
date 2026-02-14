@@ -104,6 +104,8 @@ Understanding whether you're building an **application** or a **package** influe
 
 **Most projects start as applications** and may later extract reusable components into packages. Our recommended structure accommodates both paths—you can begin with application-focused development and naturally evolve toward package-like modularity as your codebase matures.
 
+> **Note**: This chapter focuses on script-based projects, but notebooks (Jupyter, Colab) are also a legitimate way to ship Python work. For data scientists, educators, and researchers, a well-structured notebook with a sharing link *is* shipping. We cover notebooks, dashboards, and interactive tools in @sec-notebooks.
+
 **Practical example**: A data analysis script (application) might extract its core algorithms into a separate analytics package, while keeping the command-line interface and configuration handling in the main application.
 
 This structure promotes maintainability and follows Python's conventions. It might seem like overkill for tiny scripts, but as your project grows, you'll appreciate having this organization from the start.

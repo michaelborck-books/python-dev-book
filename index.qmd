@@ -92,6 +92,7 @@ The guide is structured into five main parts, followed by appendices for quick r
 - **Part 3: Documentation and Deployment** - Discusses documentation options and CI/CD automation
 - **Part 4: Case Study - Building SimpleBot** - Demonstrates applying these practices to a real project
 - **Part 5: Multi-Platform Distribution** - Ship to web, desktop (Windows, macOS, Linux), and PWA from a single codebase
+- **Beyond Scripts** - Notebooks, dashboards, and interactive Python—because scripts aren't the only way to ship
 - **Appendices** - Provide workflow checklists, tools reference, distribution templates, and glossary of terms
 
 Whether you're starting your first serious Python project or looking to professionalize an existing workflow, you'll find relevant guidance throughout. Feel free to focus on the sections most applicable to your current needs and revisit others as your projects evolve.

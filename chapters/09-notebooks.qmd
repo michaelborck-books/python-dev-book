@@ -1,0 +1,383 @@
+# Beyond Scripts: Notebooks, Dashboards, and Interactive Python {#sec-notebooks}
+
+::: {.callout-note}
+## Chapter Overview
+Scripts aren't the only way to ship Python. This chapter explores notebooks, dashboards, and interactive tools—legitimate ways to share, deploy, and deliver Python work.
+:::
+
+## Why This Chapter Appears Late (But Isn't an Afterthought)
+
+This chapter comes near the end of the book, but that's intentional—not because notebooks are less important. We wanted you to first understand the complete script-based workflow: project structure, testing, documentation, packaging, and distribution. These fundamentals apply whether you're writing scripts OR notebooks.
+
+Now that you understand the "full" workflow, you can appreciate both when notebooks simplify things and when they create limitations. You'll recognize that a `requirements.txt` matters for Binder just as it does for pip installs, that documentation practices transfer to notebook markdown cells, and that nbdev's testing approach builds on pytest concepts you already know.
+
+Notebooks are a first-class citizen in the Python ecosystem—not an alternative for people who can't handle "real" development. Many professional data scientists, researchers, and educators ship exclusively through notebooks. This chapter gives you the complete picture.
+
+::: {.callout-tip}
+## The Trade-Off Up Front
+Notebooks are often **easier to share** than packaged scripts—a Colab link gives anyone instant access with zero installation. But they **expose your code** by default, which creates friction for some audiences. Not everyone wants to scroll past Python cells to see results. Tools like Voilà and Mercury address this, but it's worth knowing: the simplicity of notebooks comes with visibility trade-offs.
+:::
+
+## The Three Ways to Write Python
+
+There are only three ways to write Python code:
+
+1. **REPL** - Interactive exploration (not for shipping)
+2. **Scripts** - Traditional apps, packages, CLI tools (this book's main focus)
+3. **Notebooks** - Data analysis, reports, teaching, prototypes
+
+This book has focused primarily on scripts. But for many Python practitioners—especially in data science, education, and research—notebooks ARE the deliverable. A well-structured notebook with a sharing link is shipping.
+
+## When Notebooks Make Sense
+
+Notebooks excel when:
+
+- **The narrative matters** - Analysis with explanation, teaching materials
+- **Exploration is the product** - Data investigation, research findings
+- **Visuals are central** - Charts, plots, interactive widgets
+- **Reproducibility is key** - Share exact environment and execution order
+- **Zero-install is required** - Viewers shouldn't need to set up Python
+
+Notebooks are less suited for:
+
+- Production APIs or services
+- CLI tools
+- Reusable libraries (though nbdev challenges this)
+- Long-running applications
+
+## Sharing and Viewing
+
+### GitHub Native Rendering
+
+GitHub renders `.ipynb` files automatically. Simply push your notebook:
+
+```bash
+git add analysis.ipynb
+git commit -m "Add quarterly analysis"
+git push
+```
+
+Viewers see rendered output without running code. Limitations: large notebooks may not render, and formatting can be inconsistent.
+
+### nbviewer
+
+[nbviewer.org](https://nbviewer.org) provides cleaner rendering:
+
+```
+https://nbviewer.org/github/username/repo/blob/main/notebook.ipynb
+```
+
+- Better formatting than GitHub
+- Supports Gists
+- Cacheable links for sharing
+
+### Gists for Quick Sharing
+
+For standalone notebooks:
+
+1. Create a Gist at gist.github.com
+2. Upload your `.ipynb` file
+3. Share via nbviewer: `https://nbviewer.org/gist/username/gist_id`
+
+## Zero-Install Execution
+
+The power of notebooks: viewers can RUN your code without installing anything.
+
+### Google Colab
+
+The most accessible option. Add a badge to your README:
+
+```markdown
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/username/repo/blob/main/notebook.ipynb)
+```
+
+**Colab advantages:**
+
+- Zero setup for viewers
+- Free GPU/TPU access
+- Google Drive integration
+- GitHub integration (open directly from repos)
+
+**Colab workflow with GitHub:**
+
+1. Develop locally or in Colab
+2. Save to GitHub (File → Save a copy to GitHub)
+3. Share Colab link that opens from GitHub
+4. Viewers get latest version automatically
+
+This gives you version control (GitHub) with zero-install execution (Colab)—a "clunky Dropbox" that's actually better because it's versioned.
+
+### Binder
+
+[mybinder.org](https://mybinder.org) turns any GitHub repo into interactive notebooks:
+
+```markdown
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/username/repo/main)
+```
+
+**Binder advantages:**
+
+- Works with `requirements.txt` or `environment.yml`
+- Full JupyterLab environment
+- No Google account required
+
+**Binder limitations:**
+
+- Slower startup (builds environment)
+- Sessions timeout
+- Limited resources
+
+### Kaggle Kernels
+
+For data science work, Kaggle provides:
+
+- Free GPU access
+- Built-in datasets
+- Community sharing
+- Competition integration
+
+## Notebooks as Applications
+
+Transform notebooks into interactive applications that hide the code.
+
+### Voilà
+
+Voilà converts notebooks into standalone dashboards:
+
+```bash
+pip install voila
+voila notebook.ipynb
+```
+
+- Renders only output cells (code hidden)
+- Supports ipywidgets for interactivity
+- Deploy on Heroku, Binder, or your own server
+
+### Mercury
+
+[Mercury](https://github.com/mljar/mercury) turns notebooks into web apps:
+
+```yaml
+# Add YAML header to notebook
+---
+title: My Analysis
+description: Interactive data explorer
+params:
+  date_range:
+    input: slider
+    min: 2020
+    max: 2024
+---
+```
+
+- Automatic widget generation from parameters
+- PDF/HTML export
+- Authentication support
+- Self-hostable
+
+### Streamlit (Notebook-Adjacent)
+
+Not notebooks, but similar rapid-development workflow:
+
+```python
+# app.py
+import streamlit as st
+import pandas as pd
+
+st.title("Data Explorer")
+data = pd.read_csv("data.csv")
+st.dataframe(data)
+```
+
+```bash
+streamlit run app.py
+```
+
+- Python scripts, not notebooks
+- But similar "write and see" iteration
+- Easy deployment via Streamlit Cloud
+
+### Panel and HoloViz
+
+For more complex dashboards:
+
+- **Panel** - Flexible dashboarding from notebooks
+- **HoloViews** - High-level plotting
+- **hvPlot** - Interactive pandas plots
+
+## Notebooks as Libraries: nbdev
+
+[nbdev](https://nbdev.fast.ai/) flips the script: develop libraries FROM notebooks.
+
+```
+notebook.ipynb → Python package + docs + tests
+```
+
+::: {.callout-note}
+## nbdev Could Be Its Own Chapter
+We could dedicate an entire chapter to nbdev—it's a complete development workflow. But since we've already covered packaging and PyPI distribution (@sec-distribution), think of nbdev as an **alternative path to the same destination**. Instead of writing `.py` files and separate docs, you write notebooks that generate both. The end result—a published package—is the same.
+:::
+
+**The nbdev philosophy:**
+
+- Write code, tests, and documentation together
+- Export specific cells to modules
+- Generate API docs automatically
+- Literate programming for Python
+
+**Basic workflow:**
+
+```python
+#| export
+def process_data(df):
+    """Clean and transform dataframe.
+
+    Parameters
+    ----------
+    df : DataFrame
+        Input data
+
+    Returns
+    -------
+    DataFrame
+        Cleaned data
+    """
+    return df.dropna()
+```
+
+```python
+#| test
+def test_process_data():
+    df = pd.DataFrame({'a': [1, None, 3]})
+    result = process_data(df)
+    assert len(result) == 2
+```
+
+**When to use nbdev:**
+
+- You naturally develop in notebooks
+- Documentation and code should live together
+- Teaching libraries where explanation matters
+
+## Low-Code Alternatives
+
+### Anvil
+
+[Anvil](https://anvil.works) provides a different model:
+
+- Drag-and-drop UI builder
+- Write Python for event handlers
+- Hosted deployment included
+- Database and user management built-in
+
+```python
+# Behind a button click
+def button_click(self, **event_args):
+    self.label.text = "Hello, " + self.text_box.text
+```
+
+**Anvil is good for:**
+
+- Internal business tools
+- Forms and data entry
+- Quick prototypes with real UIs
+- Teaching event-driven programming
+
+**Trade-offs:**
+
+- Vendor lock-in
+- Less "Pythonic" project structure
+- Limited customization
+
+## Notebook Best Practices for Shipping
+
+### Structure Your Notebooks
+
+```
+1. Title and Overview (Markdown)
+2. Setup and Imports
+3. Data Loading
+4. Analysis Sections (numbered)
+5. Conclusions
+6. Appendix (helper functions, details)
+```
+
+### Environment Management
+
+Include a requirements cell:
+
+```python
+# Requirements: pandas>=1.5, matplotlib>=3.6, seaborn>=0.12
+```
+
+Or ship with `requirements.txt` / `environment.yml` for Binder.
+
+### Clear Outputs vs. Keep Outputs
+
+| Approach | When |
+|----------|------|
+| Clear outputs | Version control (smaller diffs) |
+| Keep outputs | Sharing (viewers see results immediately) |
+
+Consider: clear for development, render for sharing.
+
+### Use nbstripout
+
+Automatically strip outputs on commit:
+
+```bash
+pip install nbstripout
+nbstripout --install
+```
+
+### Cell Tags and Metadata
+
+Use tags for tools like Voilà and nbdev:
+
+- `#| hide` - Hide cell in output
+- `#| export` - Export to module (nbdev)
+- `#| test` - Mark as test (nbdev)
+
+## Comparison Table
+
+| Tool | Type | Hosting | Best For |
+|------|------|---------|----------|
+| GitHub + nbviewer | View only | Free | Simple sharing |
+| Colab | Interactive | Free (Google) | Zero-install, GPU |
+| Binder | Interactive | Free | Reproducible environments |
+| Voilà | Dashboard | Self-host/Binder | Hide code, show results |
+| Mercury | Web app | Self-host | Parameterized reports |
+| Streamlit | Web app | Streamlit Cloud | Rapid app development |
+| nbdev | Library dev | PyPI | Literate programming |
+| Anvil | Full app | Anvil servers | Low-code business apps |
+
+## When to Graduate from Notebooks
+
+Notebooks are great, but sometimes you need to move to scripts:
+
+- **Tests are growing** - pytest is better than notebook tests
+- **Reuse across projects** - Package your code
+- **Production deployment** - APIs, services, CLI tools
+- **Team collaboration** - Notebooks have merge conflicts
+
+The path: Notebook → extract functions to `.py` → package → tests → CI/CD.
+
+Or use nbdev to keep working in notebooks while generating proper packages.
+
+## Summary
+
+- Notebooks are a legitimate shipping format
+- "Shipping" can mean a Colab link, not just a packaged app
+- Multiple tools exist to share, execute, and transform notebooks
+- Choose based on your audience: viewers, runners, or users
+- Know when to graduate to scripts (or use nbdev to avoid the choice)
+
+## Exercises
+
+1. **Share a notebook**: Push a notebook to GitHub and create both an nbviewer link and a Colab badge.
+
+2. **Try Binder**: Add a `requirements.txt` to a repo and create a Binder link.
+
+3. **Build a dashboard**: Take an analysis notebook and convert it to a Voilà dashboard.
+
+4. **Explore nbdev**: Create a simple function in a notebook and export it to a Python module using nbdev.
