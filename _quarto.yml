@@ -46,7 +46,7 @@ book:
 
 website:
   site-url: https://michael-borck.github.io/ship-python-orchestrate-ai
-  favicon: assets/favicon.png
+  favicon: favicon.svg
   open-graph: true
 
 format:
