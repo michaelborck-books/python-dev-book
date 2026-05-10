@@ -1,8 +1,8 @@
-# Creative Commons Attribution 4.0 International License
+# Creative Commons Attribution-ShareAlike 4.0 International License
 
 **Book Content License**
 
-All written content, documentation, and educational materials in "From Zero to Production: A Practical Python Development Pipeline" are licensed under the Creative Commons Attribution 4.0 International License.
+All written content, documentation, and educational materials in "From Zero to Production: A Practical Python Development Pipeline" are licensed under the Creative Commons Attribution-ShareAlike 4.0 International License.
 
 ## You are free to:
 
@@ -15,6 +15,8 @@ The licensor cannot revoke these freedoms as long as you follow the license term
 
 - **Attribution** — You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
 
+- **ShareAlike** — If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.
+
 - **No additional restrictions** — You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.
 
 ## Notices:
@@ -25,8 +27,8 @@ No warranties are given. The license may not give you all of the permissions nec
 
 ## Attribution Example:
 
-"From Zero to Production: A Practical Python Development Pipeline" by Michael Borck is licensed under CC BY 4.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/4.0/
+"From Zero to Production: A Practical Python Development Pipeline" by Michael Borck is licensed under CC BY-SA 4.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/4.0/
 
 ---
 
-**Full Legal Text:** https://creativecommons.org/licenses/by/4.0/legalcode
+**Full Legal Text:** https://creativecommons.org/licenses/by-sa/4.0/legalcode

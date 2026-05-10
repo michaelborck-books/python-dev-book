@@ -3,7 +3,7 @@
 This project uses a dual licensing approach:
 
 ## Book Content License
-All written content, documentation, and educational materials in this book are licensed under the **Creative Commons Attribution 4.0 International License (CC BY 4.0)**.
+All written content, documentation, and educational materials in this book are licensed under the **Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0)**.
 
 See [LICENSE-CONTENT.md](LICENSE-CONTENT.md) for the full text.
 
@@ -14,13 +14,13 @@ See [LICENSE-CODE.md](LICENSE-CODE.md) for the full text.
 
 ## What This Means
 
-- **Book text, chapters, documentation**: You can freely share, adapt, and build upon this material for any purpose, even commercially, as long as you provide appropriate attribution.
+- **Book text, chapters, documentation**: You can freely share, adapt, and build upon this material for any purpose, even commercially, as long as you provide appropriate attribution AND license your derivative work under the same CC BY-SA 4.0 license.
 
 - **Code examples and scripts**: You can use, modify, and distribute the code with minimal restrictions, including in commercial projects.
 
 ## Attribution
 
 When using book content, please attribute as:
-"From Zero to Production: A Practical Python Development Pipeline" by Michael Borck, licensed under CC BY 4.0.
+"From Zero to Production: A Practical Python Development Pipeline" by Michael Borck, licensed under CC BY-SA 4.0.
 
 When using code examples, include the MIT license notice found in LICENSE-CODE.md.
